@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AUCA Registration Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🎓 AUCA Registration Portal</h1>
+
+<div class="container">
+
+    <!-- STUDENT REGISTRATION -->
+    <section>
+        <h2>Student Registration</h2>
+        <input type="text" id="studentName" placeholder="Student Name">
+        <input type="text" id="studentId" placeholder="Student ID">
+
+        <select id="course">
+            <option value="">Select Course</option>
+            <option value="Database Systems">Database Systems</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Operating Systems">Operating Systems</option>
+        </select>
+
+        <button id="registerBtn">Register Course</button>
+    </section>
+
+    <!-- REGISTERED STUDENTS -->
+    <section>
+        <h2>Registered Students</h2>
+        <ul id="studentList"></ul>
+    </section>
+
+    <!-- ATTENDANCE -->
+    <section>
+        <h2>Lecturer Attendance Panel</h2>
+        <button id="publishReport">Publish Attendance Report</button>
+        <ul id="attendanceList"></ul>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
