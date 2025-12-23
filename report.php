@@ -1,22 +1,27 @@
 <?php
 include "config.php";
 
-$result = $conn->query("
+$sql = "
 SELECT 
     registrations.id AS registration_id,
     students.name,
     students.student_id,
     courses.course_name
 FROM registrations
-JOIN students ON registrations.student_id = students.id
-JOIN courses ON registrations.course_id = courses.id
-");
+INNER JOIN students ON registrations.student_id = students.id
+INNER JOIN courses ON registrations.course_id = courses.id
+";
+
+$result = $conn->query($sql);
 
 $data = [];
 
-while ($row = $result->fetch_assoc()) {
-    $data[] = $row;
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
 }
 
+header("Content-Type: application/json");
 echo json_encode($data);
 ?>
